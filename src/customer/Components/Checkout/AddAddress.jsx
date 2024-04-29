@@ -37,7 +37,19 @@ export default function AddDeliveryAddressForm({ handleNext }) {
   };
 
   const handleCreateOrder = (item) => {
-    dispatch(createOrder({ address:item, jwt, navigate }));
+    console.log(item)
+
+    const address = {
+      firstName: item.firstName,
+      lastName: item.lastName,
+      streetAddress: item.streetAddress,
+      city: item.city,
+      state: item.state,
+      zipCode: item.zipCode,
+      mobile: item.mobile
+    };
+
+    dispatch(createOrder({ address, jwt, navigate }));
     handleNext();
   };
 
