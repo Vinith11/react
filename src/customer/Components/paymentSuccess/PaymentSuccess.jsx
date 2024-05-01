@@ -9,6 +9,7 @@ import OrderTraker from "../orders/OrderTraker";
 import AddressCard from "../adreess/AdreessCard";
 import { useParams } from "react-router-dom";
 
+
 const PaymentSuccess = () => {
   // razorpay_payment_link_reference_id
   // razorpay_payment_id
@@ -21,7 +22,7 @@ const PaymentSuccess = () => {
 
   const jwt = localStorage.getItem("jwt");
   const dispatch = useDispatch();
-  const { order } = useSelector((store) => store);
+  const { order } = useSelector(store=> store);
 
   useEffect(() => {
     console.log("orderId",orderId)
