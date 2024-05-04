@@ -23,5 +23,6 @@ yarn-debug.log*
 yarn-error.log*
 
 # api file
-/src/config
+src/config/api.js
+
 
