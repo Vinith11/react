@@ -14,6 +14,7 @@ import { Fragment } from "react";
 import "./CreateProductForm.css";
 import { useDispatch } from "react-redux";
 import { createProduct } from "../../../Redux/Customers/Product/Action";
+import { useNavigate } from "react-router-dom";
 
 
 const initialSizes = [
@@ -23,6 +24,8 @@ const initialSizes = [
 ];
 
 const CreateProductForm = () => {
+
+  const navigate=useNavigate();
   
   const [productData, setProductData] = useState({
     imageUrl: "",
@@ -69,6 +72,7 @@ const jwt=localStorage.getItem("jwt")
     e.preventDefault();
     dispatch(createProduct({data:productData,jwt}))
     console.log(productData);
+    navigate("/admin/products")
   };
 
 
@@ -174,7 +178,7 @@ const jwt=localStorage.getItem("jwt")
                 label="Top Level Category"
               >
                 <MenuItem value="men">Men</MenuItem>
-                <MenuItem value="women">Women</MenuItem>
+                <MenuItem value="jersey">Jersey</MenuItem>
                 <MenuItem value="kids">Kids</MenuItem>
               </Select>
             </FormControl>
@@ -188,7 +192,7 @@ const jwt=localStorage.getItem("jwt")
                 onChange={handleChange}
                 label="Second Level Category"
               >
-                <MenuItem value="clothing">Clothing</MenuItem>
+                <MenuItem value="pl">Premier League</MenuItem>
                 <MenuItem value="accessories">Accessories</MenuItem>
                 <MenuItem value="brands">Brands</MenuItem>
               </Select>
@@ -203,8 +207,8 @@ const jwt=localStorage.getItem("jwt")
                 onChange={handleChange}
                 label="Third Level Category"
               >
-                <MenuItem value="top">Tops</MenuItem>
-                <MenuItem value="women_dress">Dresses</MenuItem>
+                <MenuItem value="mufc">Manchester United</MenuItem>
+                <MenuItem value="mcfc">Manchester City</MenuItem>
                 <MenuItem value="t-shirts">T-Shirts</MenuItem>
                 <MenuItem value="saree">Saree</MenuItem>
                 <MenuItem value="lengha_choli">Lengha Choli</MenuItem>
