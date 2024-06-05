@@ -1,8 +1,8 @@
 export const navigation = {
     categories: [
       {
-        id: 'women',
-        name: 'Women',
+        id: 'jersey',
+        name: 'Jersey',
         featured: [
           {
             name: 'New Arrivals',
@@ -19,19 +19,14 @@ export const navigation = {
         ],
         sections: [
           {
-            id: 'clothing',
-            name: 'Clothing',
+            id: 'pl',
+            name: 'Premier League',
             items: [
-              { name: 'Tops', id:"top", href: `{women/clothing/tops}` },
-              { name: 'Dresses', id:"women_dress", href: '#' },
-              { name: 'Women Jeans', id: 'women_jeans' },
-              { name: 'Lengha Choli', id: 'lengha_choli' },
-              { name: 'Sweaters', id: 'sweater' },
-              { name: 'T-Shirts', id: 't-shirt' },
-              { name: 'Jackets', id: 'jacket' },
-              { name: 'Gouns', id: 'gouns' },
-              { name: 'Sarees', id: 'saree' },
-              { name: 'Kurtas', id: 'kurtas' },
+              { name: 'Manchester United', id:"mufc", href: `{jersey/pl/mufc}` },
+              { name: 'Manchester City', id:"mcfc", href: `{jersey/pl/mcfc}` },
+              { name: 'Liverpool', id:"lfc", href: `{jersey/pl/lfc}` },
+              { name: 'Arsenal', id:"afc", href: `{jersey/pl/afc}` },
+              { name: 'Chelsea', id:"cfc", href: `{jersey/pl/mufc}` },
             ],
           },
           {

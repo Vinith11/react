@@ -8,35 +8,31 @@ import { useState } from "react";
 
 export default function LoginUserForm({ handleNext }) {
   const navigate = useNavigate();
-  const dispatch=useDispatch();
-  const jwt=localStorage.getItem("jwt");
-  const [openSnackBar,setOpenSnackBar]=useState(false);
+  const dispatch = useDispatch();
+  const jwt = localStorage.getItem("jwt");
+  const [openSnackBar, setOpenSnackBar] = useState(false);
   const { auth } = useSelector((store) => store);
-  const handleCloseSnakbar=()=>setOpenSnackBar(false);
-  useEffect(()=>{
-    if(jwt){
-      dispatch(getUser(jwt))
+  const handleCloseSnakbar = () => setOpenSnackBar(false);
+  useEffect(() => {
+    if (jwt) {
+      dispatch(getUser(jwt));
     }
-  
-  },[jwt])
-  
-  
-    useEffect(() => {
-      if (auth.user || auth.error) setOpenSnackBar(true)
-    }, [auth.user]);
+  }, [jwt]);
+
+  useEffect(() => {
+    if (auth.user || auth.error) setOpenSnackBar(true);
+  }, [auth.user]);
   const handleSubmit = (event) => {
     event.preventDefault();
     const data = new FormData(event.currentTarget);
-    
-    const userData={
+
+    const userData = {
       email: data.get("email"),
       password: data.get("password"),
-     
-    }
-    console.log("login user",userData);
-  
-    dispatch(login(userData));
+    };
+    console.log("login user", userData);
 
+    dispatch(login(userData));
   };
 
   return (
@@ -71,7 +67,7 @@ export default function LoginUserForm({ handleNext }) {
               type="submit"
               variant="contained"
               size="large"
-              sx={{padding:".8rem 0"}}
+              sx={{ padding: ".8rem 0" }}
             >
               Login
             </Button>
@@ -79,16 +75,28 @@ export default function LoginUserForm({ handleNext }) {
         </Grid>
       </form>
       <div className="flex justify-center flex-col items-center">
-         <div className="py-3 flex items-center">
-        <p className="m-0 p-0">don't have account ?</p>
-        <Button onClick={()=> navigate("/register")} className="ml-5" size="small">
-          Register
-        </Button>
+        <div className="py-3 flex items-center">
+          <p className="m-0 p-0">don't have account ?</p>
+          <Button
+            onClick={() => navigate("/register")}
+            className="ml-5"
+            size="small"
+          >
+            Register
+          </Button>
         </div>
       </div>
-      <Snackbar open={openSnackBar} autoHideDuration={6000} onClose={handleCloseSnakbar}>
-        <Alert onClose={handleCloseSnakbar} severity="success" sx={{ width: '100%' }}>
-          {auth.error?auth.error:auth.user?"Register Success":""}
+      <Snackbar
+        open={openSnackBar}
+        autoHideDuration={6000}
+        onClose={handleCloseSnakbar}
+      >
+        <Alert
+          onClose={handleCloseSnakbar}
+          severity="success"
+          sx={{ width: "100%" }}
+        >
+          {auth.error ? auth.error : auth.user ? "Register Success" : ""}
         </Alert>
       </Snackbar>
     </React.Fragment>
