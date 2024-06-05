@@ -188,9 +188,9 @@ export default function Navigation() {
                               className="mt-6 flex flex-col space-y-6"
                             >
                               {section.items.map((item) => (
-                                <li key={item.name} className="flow-root">
+                                <li key={item.id} className="flow-root">
                                   <p className="-m-2 block p-2 text-gray-500">
-                                    {"item.name"}
+                                    <a href={item.href}>{item.name}</a>
                                   </p>
                                 </li>
                               ))}
@@ -202,18 +202,7 @@ export default function Navigation() {
                   </Tab.Panels>
                 </Tab.Group>
 
-                <div className="space-y-6 border-t border-gray-200 px-4 py-6">
-                  {navigation.pages.map((page) => (
-                    <div key={page.name} className="flow-root">
-                      <a
-                        href={page.href}
-                        className="-m-2 block p-2 font-medium text-gray-900"
-                      >
-                        {page.name}
-                      </a>
-                    </div>
-                  ))}
-                </div>
+
 
                 <div className="space-y-6 border-t border-gray-200 px-4 py-6">
                   <div className="flow-root">
@@ -394,15 +383,7 @@ export default function Navigation() {
                     </Popover>
                   ))}
 
-                  {navigation.pages.map((page) => (
-                    <a
-                      key={page.name}
-                      href={page.href}
-                      className="flex items-center text-sm font-medium text-gray-700 hover:text-gray-800"
-                    >
-                      {page.name}
-                    </a>
-                  ))}
+
                 </div>
               </Popover.Group>
 
@@ -463,10 +444,12 @@ export default function Navigation() {
 
                 {/* Search */}
                 <div className="flex items-center lg:ml-6">
-                
-                  <p onClick={()=>navigate("/products/search")} className="p-2 text-gray-400 hover:text-gray-500">
+                  <p
+                    onClick={() => navigate("/products/search")}
+                    className="p-2 text-gray-400 hover:text-gray-500"
+                  >
                     <span className="sr-only">Search</span>
-                    
+
                     <MagnifyingGlassIcon
                       className="h-6 w-6"
                       aria-hidden="true"

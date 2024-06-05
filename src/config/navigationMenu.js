@@ -22,11 +22,11 @@ export const navigation = {
             id: 'pl',
             name: 'Premier League',
             items: [
-              { name: 'Manchester United', id:"mufc", href: `{jersey/pl/mufc}` },
-              { name: 'Manchester City', id:"mcfc", href: `{jersey/pl/mcfc}` },
-              { name: 'Liverpool', id:"lfc", href: `{jersey/pl/lfc}` },
-              { name: 'Arsenal', id:"afc", href: `{jersey/pl/afc}` },
-              { name: 'Chelsea', id:"cfc", href: `{jersey/pl/mufc}` },
+              { name: 'Manchester United', id:"mufc", href: `jersey/pl/mufc` },
+              { name: 'Manchester City', id:"mcfc", href: `jersey/pl/mcfc` },
+              { name: 'Liverpool', id:"lfc", href: `jersey/pl/lfc` },
+              { name: 'Arsenal', id:"afc", href: `jersey/pl/afc` },
+              { name: 'Chelsea', id:"cfc", href: `jersey/pl/cfc` },
             ],
           },
           {
