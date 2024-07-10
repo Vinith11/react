@@ -207,21 +207,7 @@ export default function Navigation() {
                   <div className="flow-root">
                     {auth.user ? (
                       <div className="flex items-center space-x-4">
-                        <Avatar
-                          className="text-white"
-                          onClick={handleUserClick}
-                          aria-controls={open ? "basic-menu" : undefined}
-                          aria-haspopup="true"
-                          aria-expanded={open ? "true" : undefined}
-                          sx={{
-                            bgcolor: deepPurple[500],
-                            color: "white",
-                            cursor: "pointer",
-                          }}
-                        >
-                          {auth.user?.firstName[0].toUpperCase()}
-                        </Avatar>
-                        <Menu
+                        <div
                           id="basic-menu"
                           anchorEl={anchorEl}
                           open={openUserMenu}
@@ -230,13 +216,17 @@ export default function Navigation() {
                             "aria-labelledby": "basic-button",
                           }}
                         >
-                          <MenuItem onClick={handleMyOrderClick}>
-                            {auth.user?.role === "ROLE_ADMIN"
-                              ? "Admin Dashboard"
-                              : "My Orders"}
-                          </MenuItem>
-                          <MenuItem onClick={handleLogout}>Logout</MenuItem>
-                        </Menu>
+                          <div>
+                            <Button onClick={handleMyOrderClick}>
+                              {auth.user?.role === "ROLE_ADMIN"
+                                ? "Admin Dashboard"
+                                : "My Orders"}
+                            </Button>
+                          </div>
+                          <div>
+                            <Button onClick={handleLogout}>Logout</Button>
+                          </div>
+                        </div>
                       </div>
                     ) : (
                       <Button
@@ -416,8 +406,6 @@ export default function Navigation() {
                       )}
                     </Popover>
                   ))}
-
-
                 </div>
               </Popover.Group>
 
