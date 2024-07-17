@@ -21,9 +21,17 @@ export const createOrder = createAsyncThunk('order/createOrder', async (reqData,
   }
 });
 
-export const getOrderById = createAsyncThunk('order/getOrderById', async (orderId, { rejectWithValue }) => {
+export const getOrderById = createAsyncThunk('order/getOrderById', async (orderId, { getState, rejectWithValue }) => {
   try {
-    const { data } = await axios.get(`${API_BASE_URL}/api/orders/${orderId}`);
+    const state = getState();
+    const jwt = state.auth.jwt;
+    const config = {
+      headers: {
+        'Content-Type': 'application/json',
+        Authorization: `Bearer ${jwt}`,
+      },
+    };
+    const { data } = await axios.get(`${API_BASE_URL}/api/orders/${orderId}`, config);
     return data;
   } catch (error) {
     return rejectWithValue(error.response && error.response.data.message ? error.response.data.message : error.message);

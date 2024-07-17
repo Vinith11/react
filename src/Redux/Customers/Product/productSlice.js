@@ -19,20 +19,8 @@ export const findProducts = createAsyncThunk('product/findProducts', async (reqD
 
   try {
     const { data } = await axios.get(
-      `${API_BASE_URL}/api/products`, {
-        params: {
-          color: colors,
-          size: sizes,
-          minPrice,
-          maxPrice,
-          minDiscount,
-          category,
-          stock,
-          sort,
-          pageNumber,
-          pageSize
-        }
-      });
+      `${API_BASE_URL}/api/products?color=${colors}&size=${sizes}&minPrice=${minPrice}&maxPrice=${maxPrice}&minDiscount=${minDiscount}&category=${category}&stock=${stock}&sort=${sort}&pageNumber=${pageNumber}&pageSize=${pageSize}`
+    );
 
     return data;
   } catch (error) {
