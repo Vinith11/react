@@ -1,7 +1,7 @@
 import React from "react";
 import { Button } from "@mui/material";
 import { useDispatch } from "react-redux";
-import { removeCartItem, updateCartItem } from "../../../Redux/Customers/Cart/Action";
+import { removeCartItem, updateCartItem } from "../../../Redux/Customers/Cart/cartSlice";
 import { IconButton } from "@mui/material";
 import AddCircleOutlineIcon from "@mui/icons-material/AddCircleOutline";
 import RemoveCircleOutlineIcon from "@mui/icons-material/RemoveCircleOutline";

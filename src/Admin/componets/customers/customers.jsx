@@ -12,7 +12,7 @@ import TableContainer from '@mui/material/TableContainer'
 import { Avatar, CardHeader, Pagination } from '@mui/material'
 import { useNavigate } from 'react-router-dom'
 import { useEffect } from 'react'
-import { getAllCustomers } from '../../../Redux/Auth/Action'
+import { getAllCustomers } from '../../../Redux/Auth/authSlice'
 import { useDispatch, useSelector } from "react-redux";
 
 

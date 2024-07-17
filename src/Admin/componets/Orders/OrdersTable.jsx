@@ -32,7 +32,7 @@ import {
   deliveredOrder,
   getOrders,
   shipOrder,
-} from "../../../Redux/Admin/Orders/Action";
+} from "../../../Redux/Admin/Orders/adminOrderSlice";
 import { configure } from "@testing-library/react";
 
 const OrdersTable = () => {

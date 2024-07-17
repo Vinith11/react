@@ -7,7 +7,7 @@ import NotFound from "./Pages/Notfound";
 import AdminPannel from "./Admin/AdminPannel";
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
-import { getUser } from "./Redux/Auth/Action";
+import { getUser } from "./Redux/Auth/authSlice";
 // import Routers from './Routers/Routers';
 
 function App() {

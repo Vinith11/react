@@ -13,8 +13,8 @@ import { navigation } from "../../../config/navigationMenu";
 import AuthModal from "../Auth/AuthModal";
 import { useDispatch, useSelector } from "react-redux";
 import { deepPurple } from "@mui/material/colors";
-import { getUser, logout } from "../../../Redux/Auth/Action";
-import { getCart } from "../../../Redux/Customers/Cart/Action";
+import { getUser, logout } from "../../../Redux/Auth/authSlice";
+import { getCart } from "../../../Redux/Customers/Cart/cartSlice";
 import TextField from "@mui/material/TextField";
 
 function classNames(...classes) {

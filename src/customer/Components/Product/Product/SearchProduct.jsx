@@ -23,7 +23,7 @@ import { useEffect } from "react";
 import {
   findProducts,
   searchProduct,
-} from "../../../../Redux/Customers/Product/Action";
+} from "../../../../Redux/Customers/Product/productSlice";
 import { Backdrop, CircularProgress } from "@mui/material";
 
 function classNames(...classes) {

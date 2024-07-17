@@ -7,7 +7,7 @@ import AddressCard from "../adreess/AdreessCard";
 import { deepPurple } from "@mui/material/colors";
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
-import { getOrderById } from "../../../Redux/Customers/Order/Action";
+import { getOrderById } from "../../../Redux/Customers/Order/orderSlice";
 
 const OrderDetails = () => {
   const dispatch = useDispatch();

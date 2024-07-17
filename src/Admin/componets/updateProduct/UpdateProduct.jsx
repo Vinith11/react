@@ -16,7 +16,7 @@ import { useDispatch, useSelector } from "react-redux";
 import {
   findProductById,
   updateProduct,
-} from "../../../Redux/Customers/Product/Action";
+} from "../../../Redux/Customers/Product/productSlice";
 import { useEffect } from "react";
 import { useParams } from "react-router-dom";
 

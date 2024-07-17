@@ -3,7 +3,7 @@ import React, { useEffect, useSyncExternalStore } from "react";
 import OrderCard from "./OrderCard";
 import FiberManualRecordIcon from "@mui/icons-material/FiberManualRecord";
 import { useDispatch, useSelector } from "react-redux";
-import { getOrderHistory } from "../../../Redux/Customers/Order/Action";
+import { getOrderHistory } from "../../../Redux/Customers/Order/orderSlice";
 
 const orderStatus = [
   { label: "On The Way", value: "onTheWay" },

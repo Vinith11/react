@@ -13,7 +13,7 @@ import {
 import { Fragment } from "react";
 import "./CreateProductForm.css";
 import { useDispatch } from "react-redux";
-import { createProduct } from "../../../Redux/Customers/Product/Action";
+import { createProduct } from "../../../Redux/Customers/Product/productSlice";
 import { useNavigate } from "react-router-dom";
 
 

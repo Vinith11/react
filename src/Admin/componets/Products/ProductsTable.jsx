@@ -28,7 +28,7 @@ import { useDispatch, useSelector } from "react-redux";
 import {
   deleteProduct,
   findProducts,
-} from "../../../Redux/Customers/Product/Action";
+} from "../../../Redux/Customers/Product/productSlice";
 
 const ProductsTable = () => {
   const location = useLocation();

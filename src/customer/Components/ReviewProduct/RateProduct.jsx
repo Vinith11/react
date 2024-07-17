@@ -10,9 +10,9 @@ import {
 import React, { useEffect, useState } from "react";
 import FiberManualRecordIcon from "@mui/icons-material/FiberManualRecord";
 import { useDispatch, useSelector } from "react-redux";
-import { createReview } from "../../../Redux/Customers/Review/Action";
+import { createReview } from "../../../Redux/Customers/Review/reviewSlice";
 import { useNavigate, useParams } from "react-router-dom";
-import { findProductById } from "../../../Redux/Customers/Product/Action";
+import { findProductById } from "../../../Redux/Customers/Product/productSlice";
 import CustomerRoutes from "../../../Routers/CustomerRoutes";
 
 const RateProduct = () => {

@@ -21,7 +21,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
 import {
   findProducts,
-} from "../../../../Redux/Customers/Product/Action";
+} from "../../../../Redux/Customers/Product/productSlice";
 import { Backdrop, CircularProgress } from "@mui/material";
 
 function classNames(...classes) {

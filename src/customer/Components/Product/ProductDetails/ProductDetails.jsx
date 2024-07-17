@@ -6,9 +6,9 @@ import { Box, Button, Grid, LinearProgress, Rating } from "@mui/material";
 import HomeProductCard from "../../Home/HomeProductCard";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { findProductById } from "../../../../Redux/Customers/Product/Action";
-import { addItemToCart } from "../../../../Redux/Customers/Cart/Action";
-import { getAllReviews } from "../../../../Redux/Customers/Review/Action";
+import { findProductById } from "../../../../Redux/Customers/Product/productSlice";
+import { addItemToCart } from "../../../../Redux/Customers/Cart/cartSlice";
+import { getAllReviews } from "../../../../Redux/Customers/Review/reviewSlice";
 import { lengha_page1 } from "../../../../Data/Women/LenghaCholi";
 import { gounsPage1 } from "../../../../Data/Gouns/gouns";
 

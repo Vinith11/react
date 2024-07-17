@@ -4,9 +4,9 @@ import { useLocation, useNavigate } from "react-router-dom";
 import CartItem from "../Cart/CartItem";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { getOrderById } from "../../../Redux/Customers/Order/Action";
+import { getOrderById } from "../../../Redux/Customers/Order/orderSlice";
 import AddressCard from "../adreess/AdreessCard";
-import { createPayment } from "../../../Redux/Customers/Payment/Action";
+import { createPayment } from "../../../Redux/Customers/Payment/paymentSlice";
 
 const OrderSummary = () => {
   const navigate = useNavigate();
