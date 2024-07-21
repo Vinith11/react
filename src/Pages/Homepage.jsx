@@ -10,14 +10,17 @@ import { mensShoesPage1 } from "../Data/shoes";
 import { mens_kurta } from "../Data/Men/men_kurta";
 import { lengha_page1 } from "../Data/Women/LenghaCholi";
 
-const Homepage = () => {
+import { manchester_jercey } from "../Data/Men/manchester_jercey";
 
+const Homepage = () => {
   return (
     <div className="">
       <HomeCarousel images={homeCarouselData} />
 
       <div className="space-y-10 py-20">
-      <HomeProductSection data={mens_kurta} section={"Men's Kurta"} />
+      http://localhost:5454/api/products/id/1
+        <HomeProductSection data={manchester_jercey} section={"Manchester Derby"} />
+        <HomeProductSection data={mens_kurta} section={"Men's Kurta"} />
         <HomeProductSection data={mensShoesPage1} section={"Men's Shoes"} />
         <HomeProductSection data={lengha_page1} section={"Lengha Choli"} />
         <HomeProductSection data={sareePage1} section={"Saree"} />
@@ -26,8 +29,6 @@ const Homepage = () => {
         <HomeProductSection data={kurtaPage1} section={"Women's Kurtas"} />
         {/* <HomeProductSection data={mensPantsPage1} section={"Men's Pants"} /> */}
       </div>
-
-      
     </div>
   );
 };

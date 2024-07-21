@@ -23,9 +23,10 @@ export const findProducts = createAsyncThunk('product/findProducts', async (reqD
     const config = {
       headers: {
         'Content-Type': 'application/json',
-        Authorization: `Bearer eyJhbGciOiJIUzM4NCJ9.eyJpYXQiOjE3MjE1NDg3NTIsImV4cCI6MTcyMTYzNTE1MiwiZW1haWwiOiJ2aW5pdGhAZ21haWwuY29tIn0.lUk6dJcN8tNMYfiX1bJX7ZBvXEPE6M62-xEycAXF6A2b7UQg8v7Zqzy44HCIx89i`,
+        Authorization: `Bearer ${jwt}`,
       },
     };
+    console.log('JWT', jwt);
     const { data } = await axios.get(
       `${API_BASE_URL}/api/products?color=${colors}&size=${sizes}&minPrice=${minPrice}&maxPrice=${maxPrice}&minDiscount=${minDiscount}&category=${category}&stock=${stock}&sort=${sort}&pageNumber=${pageNumber}&pageSize=${pageSize}`,
       config

@@ -55,6 +55,7 @@ const authSlice = createSlice({
   name: 'auth',
   initialState: {
     user: null,
+    jwt: localStorage.getItem('jwt') || null,
     isLoading: false,
     error: null,
     customers: [],
@@ -76,6 +77,7 @@ const authSlice = createSlice({
       .addCase(register.fulfilled, (state, action) => {
         state.isLoading = false;
         state.user = action.payload;
+        state.jwt = action.payload.jwt;
       })
       .addCase(register.rejected, (state, action) => {
         state.isLoading = false;
@@ -89,6 +91,7 @@ const authSlice = createSlice({
       .addCase(login.fulfilled, (state, action) => {
         state.isLoading = false;
         state.user = action.payload;
+        state.jwt = action.payload.jwt;
       })
       .addCase(login.rejected, (state, action) => {
         state.isLoading = false;
