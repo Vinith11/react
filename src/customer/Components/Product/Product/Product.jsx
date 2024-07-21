@@ -34,7 +34,11 @@ export default function Product() {
   const dispatch = useDispatch();
   const jwt = localStorage.getItem("jwt");
   const param = useParams();
-  const { customersProduct } = useSelector((store) => store);
+
+  const customersProduct = useSelector((state) => state.customersProduct.products);
+
+
+
   const location = useLocation();
   const [isLoaderOpen, setIsLoaderOpen] = useState(false);
 
@@ -84,16 +88,8 @@ export default function Product() {
       stock: stock,
     };
     dispatch(findProducts(data));
-  }, [
-    param.lavelThree,
-    colorValue,
-    sizeValue,
-    price,
-    disccount,
-    sortValue,
-    pageNumber,
-    stock,
-  ]);
+  }, [dispatch]);
+
 
   const handleFilter = (value, sectionId) => {
     const searchParams = new URLSearchParams(location.search);
@@ -129,13 +125,6 @@ export default function Product() {
     navigate({ search: `?${query}` });
   };
 
-  useEffect(() => {
-    if (customersProduct.loading) {
-      setIsLoaderOpen(true);
-    } else {
-      setIsLoaderOpen(false);
-    }
-  }, [customersProduct.loading]);
 
   return (
     <div className="bg-white -z-20 ">
@@ -454,7 +443,7 @@ export default function Product() {
                 {/* Product grid */}
                 <div className="lg:col-span-4 w-full ">
                   <div className="flex flex-wrap justify-center bg-white border py-5 rounded-md ">
-                    {customersProduct?.products?.content?.map((item) => (
+                    {customersProduct?.map((item) => (
                       <ProductCard product={item} />
                     ))}
                   </div>

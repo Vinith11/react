@@ -3,7 +3,7 @@ import axios from 'axios';
 import { API_BASE_URL } from '../../../config/api';
 
 // Async thunks
-export const findProducts = createAsyncThunk('product/findProducts', async (reqData, { rejectWithValue }) => {
+export const findProducts = createAsyncThunk('product/findProducts', async (reqData, { getState, rejectWithValue }) => {
   const {
     colors,
     sizes,
@@ -18,11 +18,22 @@ export const findProducts = createAsyncThunk('product/findProducts', async (reqD
   } = reqData;
 
   try {
+    const state = getState();
+    const jwt = state.auth.jwt;
+    const config = {
+      headers: {
+        'Content-Type': 'application/json',
+        Authorization: `Bearer eyJhbGciOiJIUzM4NCJ9.eyJpYXQiOjE3MjE1NDg3NTIsImV4cCI6MTcyMTYzNTE1MiwiZW1haWwiOiJ2aW5pdGhAZ21haWwuY29tIn0.lUk6dJcN8tNMYfiX1bJX7ZBvXEPE6M62-xEycAXF6A2b7UQg8v7Zqzy44HCIx89i`,
+      },
+    };
     const { data } = await axios.get(
-      `${API_BASE_URL}/api/products?color=${colors}&size=${sizes}&minPrice=${minPrice}&maxPrice=${maxPrice}&minDiscount=${minDiscount}&category=${category}&stock=${stock}&sort=${sort}&pageNumber=${pageNumber}&pageSize=${pageSize}`
+      `${API_BASE_URL}/api/products?color=${colors}&size=${sizes}&minPrice=${minPrice}&maxPrice=${maxPrice}&minDiscount=${minDiscount}&category=${category}&stock=${stock}&sort=${sort}&pageNumber=${pageNumber}&pageSize=${pageSize}`,
+      config
     );
-
-    return data;
+    console.log('API Response:', data);
+    console.log('API Content :', data.content);
+    
+    return data.content; // Extracting content field
   } catch (error) {
     return rejectWithValue(error.response && error.response.data.message ? error.response.data.message : error.message);
   }
@@ -95,7 +106,7 @@ const productSlice = createSlice({
       })
       .addCase(findProducts.fulfilled, (state, action) => {
         state.loading = false;
-        state.products = action.payload;
+        state.products = action.payload; // Set the products state
       })
       .addCase(findProducts.rejected, (state, action) => {
         state.loading = false;
