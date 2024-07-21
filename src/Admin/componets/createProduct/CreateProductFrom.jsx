@@ -25,8 +25,10 @@ const initialSizes = [
 
 const CreateProductForm = () => {
 
-  const navigate=useNavigate();
   
+  const navigate = useNavigate();
+  const dispatch = useDispatch();
+
   const [productData, setProductData] = useState({
     imageUrl: "",
     brand: "",
@@ -34,16 +36,16 @@ const CreateProductForm = () => {
     color: "",
     discountedPrice: "",
     price: "",
-    discountPersent: "",
+    discountPercent: "",
     size: initialSizes,
     quantity: "",
-    topLavelCategory: "",
-    secondLavelCategory: "",
-    thirdLavelCategory: "",
+    topLevelCategory: "",
+    secondLevelCategory: "",
+    thirdLevelCategory: "",
     description: "",
   });
-const dispatch=useDispatch();
-const jwt=localStorage.getItem("jwt")
+
+  const jwt = localStorage.getItem("jwt");
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -55,7 +57,7 @@ const jwt=localStorage.getItem("jwt")
 
   const handleSizeChange = (e, index) => {
     let { name, value } = e.target;
-    name==="size_quantity"?name="quantity":name=e.target.name;
+    name === "size_quantity" ? name = "quantity" : name = e.target.name;
 
     const sizes = [...productData.size];
     sizes[index][name] = value;
@@ -65,14 +67,17 @@ const jwt=localStorage.getItem("jwt")
     }));
   };
 
-
-
-
   const handleSubmit = (e) => {
     e.preventDefault();
-    dispatch(createProduct({data:productData,jwt}))
+    dispatch(createProduct({ data: productData, jwt }))
+      .then((response) => {
+        if (createProduct.fulfilled.match(response)) {
+          navigate("/admin/products");
+        } else {
+          console.error('Failed to create product:', response.payload);
+        }
+      });
     console.log(productData);
-    navigate("/admin/products")
   };
 
 
@@ -209,7 +214,7 @@ const jwt=localStorage.getItem("jwt")
               >
                 <MenuItem value="mufc">Manchester United</MenuItem>
                 <MenuItem value="mcfc">Manchester City</MenuItem>
-                <MenuItem value="t-shirts">T-Shirts</MenuItem>
+                <MenuItem value="lfc">Liverpool</MenuItem>
                 <MenuItem value="saree">Saree</MenuItem>
                 <MenuItem value="lengha_choli">Lengha Choli</MenuItem>
               </Select>

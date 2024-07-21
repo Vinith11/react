@@ -58,13 +58,21 @@ export const searchProduct = createAsyncThunk('product/searchProduct', async (ke
 });
 
 export const createProduct = createAsyncThunk('product/createProduct', async (product, { rejectWithValue }) => {
+  const { data, jwt } = product;
   try {
-    const { data } = await axios.post(`${API_BASE_URL}/api/admin/products/`, product.data);
-    return data;
+    const config = {
+      headers: {
+        'Content-Type': 'application/json',
+        Authorization: `Bearer ${jwt}`,
+      },
+    };
+    const response = await axios.post(`${API_BASE_URL}/api/admin/products/`, data, config);
+    return response.data;
   } catch (error) {
     return rejectWithValue(error.response && error.response.data.message ? error.response.data.message : error.message);
   }
 });
+
 
 export const updateProduct = createAsyncThunk('product/updateProduct', async (product, { rejectWithValue }) => {
   try {
@@ -146,6 +154,9 @@ const productSlice = createSlice({
       })
       .addCase(createProduct.fulfilled, (state, action) => {
         state.loading = false;
+        if (!Array.isArray(state.products)) {
+          state.products = [];
+        }
         state.products.push(action.payload);
       })
       .addCase(createProduct.rejected, (state, action) => {
@@ -186,3 +197,4 @@ const productSlice = createSlice({
 });
 
 export default productSlice.reducer;
+
