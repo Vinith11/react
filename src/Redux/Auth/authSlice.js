@@ -6,7 +6,7 @@ import api, { API_BASE_URL } from '../../config/api';
 export const register = createAsyncThunk('auth/register', async (userData, { rejectWithValue }) => {
   try {
     const response = await axios.post(`${API_BASE_URL}/auth/signup`, userData);
-    
+
     // Check if the response status is 200
     if (response.status === 200) {
       const user = response.data;
@@ -16,14 +16,18 @@ export const register = createAsyncThunk('auth/register', async (userData, { rej
       return rejectWithValue('Unexpected response status');
     }
   } catch (error) {
-    return rejectWithValue(error.response && error.response.data.message ? error.response.data.message : error.message);
+    // Handle error from API response
+    const errorMessage = error.response && error.response.data && error.response.data.error 
+                         ? error.response.data.error 
+                         : error.message;
+    return rejectWithValue(errorMessage);
   }
 });
 
 export const login = createAsyncThunk('auth/login', async (userData, { rejectWithValue }) => {
   try {
     const response = await axios.post(`${API_BASE_URL}/auth/signin`, userData);
-    
+
     // Check if the response status is 200
     if (response.status === 200) {
       const user = response.data;
@@ -33,7 +37,11 @@ export const login = createAsyncThunk('auth/login', async (userData, { rejectWit
       return rejectWithValue('Unexpected response status');
     }
   } catch (error) {
-    return rejectWithValue(error.response && error.response.data.message ? error.response.data.message : error.message);
+    // Handle error from API response
+    const errorMessage = error.response && error.response.data && error.response.data.error 
+                         ? error.response.data.error 
+                         : error.message;
+    return rejectWithValue(errorMessage);
   }
 });
 
