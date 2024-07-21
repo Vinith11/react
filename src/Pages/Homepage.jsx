@@ -18,7 +18,6 @@ const Homepage = () => {
       <HomeCarousel images={homeCarouselData} />
 
       <div className="space-y-10 py-20">
-      http://localhost:5454/api/products/id/1
         <HomeProductSection data={manchester_jercey} section={"Manchester Derby"} />
         <HomeProductSection data={mens_kurta} section={"Men's Kurta"} />
         <HomeProductSection data={mensShoesPage1} section={"Men's Shoes"} />

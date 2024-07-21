@@ -28,8 +28,7 @@ export const findProducts = createAsyncThunk('product/findProducts', async (reqD
     };
     console.log('JWT', jwt);
     const { data } = await axios.get(
-      `${API_BASE_URL}/api/products?color=${colors}&size=${sizes}&minPrice=${minPrice}&maxPrice=${maxPrice}&minDiscount=${minDiscount}&category=${category}&stock=${stock}&sort=${sort}&pageNumber=${pageNumber}&pageSize=${pageSize}`,
-      config
+      `${API_BASE_URL}/api/products?color=${colors}&size=${sizes}&minPrice=${minPrice}&maxPrice=${maxPrice}&minDiscount=${minDiscount}&category=${category}&stock=${stock}&sort=${sort}&pageNumber=${pageNumber}&pageSize=${pageSize}`
     );
     console.log('API Response:', data);
     console.log('API Content :', data.content);
