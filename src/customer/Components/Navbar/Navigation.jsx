@@ -426,7 +426,7 @@ export default function Navigation() {
                           cursor: "pointer",
                         }}
                       >
-                        {auth.user?.firstName[0].toUpperCase()}
+                        {auth.user?.firstName ? auth.user.firstName[0].toUpperCase() : ""}
                       </Avatar>
                       {/* <Button
                         id="basic-button"
