@@ -33,7 +33,7 @@ export const findProducts = createAsyncThunk('product/findProducts', async (reqD
     console.log('API Response:', data);
     console.log('API Content :', data.content);
     
-    return data.content; // Extracting content field
+    return data; // Extracting content field
   } catch (error) {
     return rejectWithValue(error.response && error.response.data.message ? error.response.data.message : error.message);
   }

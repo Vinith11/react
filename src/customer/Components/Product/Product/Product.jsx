@@ -35,7 +35,7 @@ export default function Product() {
   const jwt = localStorage.getItem("jwt");
   const param = useParams();
 
-  const customersProduct = useSelector((state) => state.customersProduct.products);
+  const customersProduct = useSelector((state) => state.customersProduct);
 
 
 
@@ -443,7 +443,7 @@ export default function Product() {
                 {/* Product grid */}
                 <div className="lg:col-span-4 w-full ">
                   <div className="flex flex-wrap justify-center bg-white border py-5 rounded-md ">
-                    {customersProduct?.map((item) => (
+                    {customersProduct?.products?.content?.map((item) => (
                       <ProductCard product={item} />
                     ))}
                   </div>
