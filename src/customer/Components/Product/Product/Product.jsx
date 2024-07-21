@@ -88,7 +88,16 @@ export default function Product() {
       stock: stock,
     };
     dispatch(findProducts(data));
-  }, [dispatch]);
+  }, [
+    param.lavelThree,
+    colorValue,
+    sizeValue,
+    price,
+    disccount,
+    sortValue,
+    pageNumber,
+    stock,
+  ]);
 
 
   const handleFilter = (value, sectionId) => {
