@@ -17,29 +17,28 @@ import Navigation from "../customer/Components/Navbar/Navigation";
 const Routers = () => {
   return (
     <div>
-        <div>
-             <Navigation/>
-        </div>
-       <div className="">
+      <div>
+        <Navigation />
+      </div>
+      <div className="">
         <Routes>
+          <Route path="/" element={<Homepage />}></Route>
+          <Route path="/home" element={<Homepage />}></Route>
+          <Route path="/about" element={<About />}></Route>
+          <Route path="/privaciy-policy" element={<PrivacyPolicy />}></Route>
+          <Route path="/terms-condition" element={<TearmsCondition />}></Route>
+          <Route path="/contact" element={<Contact />}></Route>
+          <Route path="/men" element={<Product />}></Route>
+          <Route
+            path="/product/:productId"
+            element={<ProductDetails />}
+          ></Route>
+          <Route path="/cart" element={<Cart />}></Route>
 
-        <Route path="/" element={<Homepage/>}></Route>
-        <Route path="/home" element={<Homepage/>}></Route>
-        <Route path="/about" element={<About/>}></Route>
-        <Route path="/privaciy-policy" element={<PrivacyPolicy/>}></Route>
-        <Route path="/terms-condition" element={<TearmsCondition/>}></Route>
-        <Route path="/contact" element={<Contact/>}></Route>
-        <Route path="/men" element={<Product/>}></Route>
-        <Route path="/product/:productId" element={<ProductDetails/>}></Route>
-        <Route path="/cart" element={<Cart/>}></Route>
-      
-
-        <Route path="/admin" element={<AdminPannel/>}></Route>
-        <Route path="/demo" element={<DemoAdmin/>}></Route>
-
-      </Routes>
-       </div>
-      
+          <Route path="/admin" element={<AdminPannel />}></Route>
+          <Route path="/demo" element={<DemoAdmin />}></Route>
+        </Routes>
+      </div>
     </div>
   );
 };

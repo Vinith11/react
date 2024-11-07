@@ -15,7 +15,9 @@ import { useDispatch, useSelector } from "react-redux";
 import { deepPurple } from "@mui/material/colors";
 import { getUser, logout } from "../../../Redux/Auth/authSlice";
 import { getCart } from "../../../Redux/Customers/Cart/cartSlice";
-import TextField from "@mui/material/TextField";
+import football from "../../../assets/football.png"
+
+
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(" ");
@@ -259,9 +261,7 @@ export default function Navigation() {
       </Transition.Root>
 
       <header className="relative bg-white">
-        <p className="flex h-10 items-center justify-center bg-indigo-600 px-4 text-sm font-medium text-white sm:px-6 lg:px-8">
-          Get free delivery on orders over $100
-        </p>
+
 
         <nav aria-label="Top" className="mx-auto">
           <div className="border-b border-gray-200">
@@ -280,7 +280,7 @@ export default function Navigation() {
                 <Link to="/">
                   <span className="sr-only">Your Company</span>
                   <img
-                    src="https://res.cloudinary.com/ddkso1wxi/image/upload/v1675919455/Logo/Copy_of_Zosh_Academy_nblljp.png"
+                    src={football}
                     alt="Shopwithzosh"
                     className="h-8 w-8 mr-2"
                   />
