@@ -30,87 +30,93 @@ export const navigation = {
             ],
           },
           {
-            id: 'accessories',
-            name: 'Accessories',
+            id: 'laliga',
+            name: 'La Liga',
             items: [
-              { name: 'Watches', id: 'watch' },
-              { name: 'Wallets', id: 'wallet' },
-              { name: 'Bags', id: 'bag' },
-              { name: 'Sunglasses', id: 'sunglasse' },
-              { name: 'Hats', id: 'hat' },
-              { name: 'Belts', id: 'belt' },
+              { name: 'Real Madrid', id:"fcrm", href: `jersey/laliga/fcrm` },
+              { name: 'Barcelona', id:"fcb", href: `jersey/laliga/fcb` },
+              { name: 'Atletico Madrid', id:"fcam", href: `jersey/laliga/fcam` }
             ],
           },
           {
-            id: 'brands',
-            name: 'Brands',
+            id: 'bundesliga',
+            name: 'Bundesliga',
             items: [
-              { name: 'Full Nelson', id: '#' },
-              { name: 'My Way', id: '#' },
-              { name: 'Re-Arranged', id: '#' },
-              { name: 'Counterfeit', id: '#' },
-              { name: 'Significant Other', id: '#' },
+              { name: 'Bayern Munich', id:"fcbm", href: `jersey/bundesliga/fcbm` },
+              { name: 'Borussia Dortmund', id:"bvb", href: `jersey/bundesliga/bvb` },
+              { name: 'Bayer Leverkusen', id:"bl", href: `jersey/bundesliga/bl` }
             ],
           },
+          // {
+          //   id: 'brands',
+          //   name: 'Brands',
+          //   items: [
+          //     { name: 'Full Nelson', id: '#' },
+          //     { name: 'My Way', id: '#' },
+          //     { name: 'Re-Arranged', id: '#' },
+          //     { name: 'Counterfeit', id: '#' },
+          //     { name: 'Significant Other', id: '#' },
+          //   ],
+          // },
         ],
       },
-      {
-        id: 'men',
-        name: 'Men',
-        featured: [
-          {
-            name: 'New Arrivals',
-            id: '#',
-            imageSrc: 'https://tailwindui.com/img/ecommerce-images/product-page-04-detail-product-shot-01.jpg',
-            imageAlt: 'Drawstring top with elastic loop closure and textured interior padding.',
-          },
-          {
-            name: 'Artwork Tees',
-            id: '#',
-            imageSrc: 'https://tailwindui.com/img/ecommerce-images/category-page-02-image-card-06.jpg',
-            imageAlt:
-              'Three shirts in gray, white, and blue arranged on table with same line drawing of hands and shapes overlapping on front of shirt.',
-          },
-        ],
-        sections: [
-          {
-            id: 'clothing',
-            name: 'Clothing',
-            items: [
-              { name: 'Mens Kurtas', id: 'mens_kurta' },
-              { name: 'Shirt', id: 'shirt' },
-              { name: 'Men Jeans', id: 'men_jeans' },
-              { name: 'Sweaters', id: '#' },
-              { name: 'T-Shirts', id: 't-shirt' },
-              { name: 'Jackets', id: '#' },
-              { name: 'Activewear', id: '#' },
+      // {
+      //   id: 'men',
+      //   name: 'Men',
+      //   featured: [
+      //     {
+      //       name: 'New Arrivals',
+      //       id: '#',
+      //       imageSrc: 'https://tailwindui.com/img/ecommerce-images/product-page-04-detail-product-shot-01.jpg',
+      //       imageAlt: 'Drawstring top with elastic loop closure and textured interior padding.',
+      //     },
+      //     {
+      //       name: 'Artwork Tees',
+      //       id: '#',
+      //       imageSrc: 'https://tailwindui.com/img/ecommerce-images/category-page-02-image-card-06.jpg',
+      //       imageAlt:
+      //         'Three shirts in gray, white, and blue arranged on table with same line drawing of hands and shapes overlapping on front of shirt.',
+      //     },
+      //   ],
+      //   sections: [
+      //     {
+      //       id: 'clothing',
+      //       name: 'Clothing',
+      //       items: [
+      //         { name: 'Mens Kurtas', id: 'mens_kurta' },
+      //         { name: 'Shirt', id: 'shirt' },
+      //         { name: 'Men Jeans', id: 'men_jeans' },
+      //         { name: 'Sweaters', id: '#' },
+      //         { name: 'T-Shirts', id: 't-shirt' },
+      //         { name: 'Jackets', id: '#' },
+      //         { name: 'Activewear', id: '#' },
               
-            ],
-          },
-          {
-            id: 'accessories',
-            name: 'Accessories',
-            items: [
-              { name: 'Watches', id: '#' },
-              { name: 'Wallets', id: '#' },
-              { name: 'Bags', id: '#' },
-              { name: 'Sunglasses', id: '#' },
-              { name: 'Hats', id: '#' },
-              { name: 'Belts', id: '#' },
-            ],
-          },
-          {
-            id: 'brands',
-            name: 'Brands',
-            items: [
-              { name: 'Re-Arranged', id: '#' },
-              { name: 'Counterfeit', id: '#' },
-              { name: 'Full Nelson', id: '#' },
-              { name: 'My Way', id: '#' },
-            ],
-          },
-        ],
-      },
+      //       ],
+      //     },
+      //     {
+      //       id: 'accessories',
+      //       name: 'Accessories',
+      //       items: [
+      //         { name: 'Watches', id: '#' },
+      //         { name: 'Wallets', id: '#' },
+      //         { name: 'Bags', id: '#' },
+      //         { name: 'Sunglasses', id: '#' },
+      //         { name: 'Hats', id: '#' },
+      //         { name: 'Belts', id: '#' },
+      //       ],
+      //     },
+      //     {
+      //       id: 'brands',
+      //       name: 'Brands',
+      //       items: [
+      //         { name: 'Re-Arranged', id: '#' },
+      //         { name: 'Counterfeit', id: '#' },
+      //         { name: 'Full Nelson', id: '#' },
+      //         { name: 'My Way', id: '#' },
+      //       ],
+      //     },
+      //   ],
+      // },
     ],
     pages: [
       { name: 'Company', id: '/' },
