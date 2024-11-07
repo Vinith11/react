@@ -5,15 +5,15 @@ export const navigation = {
         name: 'Jersey',
         featured: [
           {
-            name: 'New Arrivals',
+            name: 'GOAT Collection Special',
             href: '/',
             imageSrc: require('../assets/nav/1cr7.jpg'),
             imageAlt: 'Models sitting back to back, wearing Basic Tee in black and bone.',
           },
           {
-            name: 'Basic Tees',
+            name: 'Mimai champions',
             href: '/',
-            imageSrc: require('../assets/nav/1ms10.jpeg'),
+            imageSrc: require('../assets/nav/1ms10.jpg'),
             imageAlt: 'Close up of Basic Tee fall bundle with off-white, ochre, olive, and black tees.',
           },
         ],
